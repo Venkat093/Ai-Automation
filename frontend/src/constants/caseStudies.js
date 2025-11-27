@@ -1,0 +1,62 @@
+export const caseStudies = [
+  {
+    id: 'real-estate-automation',
+    title: 'Real Estate Agent Automation',
+    client: 'Premier Realty Group',
+    industry: 'Real Estate',
+    challenge: 'Missing 60% of leads due to slow response times and manual scheduling processes.',
+    solution: 'Implemented AI chatbot for instant lead capture, automated appointment setter, and CRM integration.',
+    results: [
+      { metric: '60%', description: 'Faster lead response time' },
+      { metric: '25%', description: 'Increase in property showings' },
+      { metric: '15hrs', description: 'Saved per week on scheduling' },
+    ],
+    tools: ['ChatGPT', 'Calendly', 'HubSpot', 'Make.com'],
+    testimonial: {
+      quote: "This automation has transformed how we handle leads. We're booking more showings than ever and I have my evenings back.",
+      author: 'Sarah Mitchell',
+      role: 'Managing Broker',
+    },
+    image: 'https://images.unsplash.com/photo-1763718432504-7716caff6e99?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxBSSUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NjQxOTQ2MjR8MA&ixlib=rb-4.1.0&q=85',
+  },
+  {
+    id: 'clinic-support-automation',
+    title: 'Medical Clinic Support Automation',
+    client: 'Downtown Health Clinic',
+    industry: 'Healthcare',
+    challenge: 'Front desk overwhelmed with appointment calls, rescheduling, and basic patient questions.',
+    solution: 'Built AI chatbot for FAQs, appointment booking system, and automated reminder workflows.',
+    results: [
+      { metric: '70%', description: 'Reduction in support inquiries' },
+      { metric: '80%', description: 'Drop in no-show appointments' },
+      { metric: '5hrs', description: 'Daily time saved for staff' },
+    ],
+    tools: ['Botpress', 'Twilio', 'Google Calendar', 'Zapier'],
+    testimonial: {
+      quote: 'Our staff can now focus on patient care instead of answering the same questions repeatedly. Patient satisfaction has increased dramatically.',
+      author: 'Dr. James Patterson',
+      role: 'Clinic Director',
+    },
+    image: 'https://images.unsplash.com/photo-1762328862557-e0a36587cd3c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxjaGF0Ym90JTIwaW50ZXJmYWNlfGVufDB8fHx8MTc2NDIxNDMyNXww&ixlib=rb-4.1.0&q=85',
+  },
+  {
+    id: 'agency-appointment-setter',
+    title: 'Marketing Agency Appointment Setter',
+    client: 'Growth Digital Agency',
+    industry: 'Digital Marketing',
+    challenge: 'Spending too much time qualifying leads and booking discovery calls manually.',
+    solution: 'Created AI-powered lead qualification system with automated appointment setter and CRM pipeline.',
+    results: [
+      { metric: '40%', description: 'Increase in booked calls' },
+      { metric: '50%', description: 'Better lead quality' },
+      { metric: '12hrs', description: 'Weekly time savings' },
+    ],
+    tools: ['ChatGPT', 'Calendly', 'Pipedrive', 'Make.com'],
+    testimonial: {
+      quote: "We've doubled our qualified meetings without hiring more SDRs. The ROI on this automation paid for itself in the first month.",
+      author: 'Michael Chen',
+      role: 'Founder & CEO',
+    },
+    image: 'https://images.unsplash.com/photo-1763718528755-4bca23f82ac3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxBSSUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NjQxOTQ2MjR8MA&ixlib=rb-4.1.0&q=85',
+  },
+];
