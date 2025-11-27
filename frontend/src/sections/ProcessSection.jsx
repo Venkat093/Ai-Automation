@@ -7,7 +7,7 @@ const ProcessSection = () => {
   return (
     <section
       className="py-24"
-      style={{ background: "rgb(204, 210, 215)" }}
+      style={{ background: colors.bgSecondary }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
