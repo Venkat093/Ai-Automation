@@ -17,13 +17,13 @@ const ServicesOverview = () => {
         <div className="text-center mb-16">
           <h2
             className="text-4xl lg:text-5xl font-bold mb-6"
-            style={{ color: colors.slateText }}
+            style={{ color: colors.textPrimary }}
           >
-            What We <span style={{ color: colors.primaryBlue }}>Automate</span>
+            What We <span style={{ color: colors.accentPrimary }}>Automate</span>
           </h2>
           <p
             className="text-xl max-w-3xl mx-auto"
-            style={{ color: colors.textMuted, lineHeight: 1.6 }}
+            style={{ color: colors.textSecondary, lineHeight: 1.6 }}
           >
             From AI chatbots to complete revenue automation systems, we build solutions that work 24/7 to grow your business.
           </p>
