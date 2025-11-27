@@ -7,6 +7,7 @@ import ChatbotWidget from "./components/ChatbotWidget";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import BookCall from "./pages/BookCall";
+import CaseStudies from "./pages/CaseStudies";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:serviceId" element={<Services />} />
           <Route path="/book-call" element={<BookCall />} />
-          <Route path="/case-studies" element={<Home />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/:studyId" element={<CaseStudies />} />
           <Route path="/resources" element={<Home />} />
           <Route path="/about" element={<Home />} />
         </Routes>
