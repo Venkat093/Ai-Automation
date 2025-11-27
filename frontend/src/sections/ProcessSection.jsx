@@ -14,13 +14,13 @@ const ProcessSection = () => {
         <div className="text-center mb-16">
           <h2
             className="text-4xl lg:text-5xl font-bold mb-6"
-            style={{ color: colors.slateText }}
+            style={{ color: colors.textPrimary }}
           >
-            How It <span style={{ color: colors.primaryBlue }}>Works</span>
+            How It <span style={{ color: colors.accentPrimary }}>Works</span>
           </h2>
           <p
             className="text-xl max-w-3xl mx-auto"
-            style={{ color: colors.textMuted, lineHeight: 1.6 }}
+            style={{ color: colors.textSecondary, lineHeight: 1.6 }}
           >
             Our proven 4-step process takes you from strategy to live automation in weeks, not months.
           </p>
