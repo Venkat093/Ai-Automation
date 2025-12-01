@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import ChatbotWidget from "./components/ChatbotWidget";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import BookCall from "./pages/BookCall";
 import CaseStudies from "./pages/CaseStudies";
 
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/:serviceId" element={<Services />} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:studyId" element={<CaseStudies />} />
