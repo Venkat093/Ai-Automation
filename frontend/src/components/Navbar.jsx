@@ -62,6 +62,21 @@ const Navbar = () => {
                             ? colors.accentPrimary
                             : colors.textSecondary,
                       }}
+                      // Toggle on click so dropdown is accessible by mouse click
+                      onClick={() =>
+                        setOpenMegaMenu(openMegaMenu === item.label ? null : item.label)
+                      }
+                      // Keyboard accessibility: Enter/Space toggles, Escape closes
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setOpenMegaMenu(openMegaMenu === item.label ? null : item.label);
+                        } else if (e.key === 'Escape') {
+                          setOpenMegaMenu(null);
+                        }
+                      }}
+                      aria-expanded={openMegaMenu === item.label}
+                      aria-controls={`mega-${item.label.replace(/\s+/g, '-')}`}
                     >
                       <span>{item.label}</span>
                       <ChevronDown size={16} />
@@ -69,6 +84,8 @@ const Navbar = () => {
                     {/* Mega Menu Dropdown */}
                     {openMegaMenu === item.label && (
                       <div
+                        id={`mega-${item.label.replace(/\s+/g, '-')}`}
+                        role="menu"
                         className="absolute top-full left-0 mt-2 w-[600px] rounded-2xl shadow-2xl p-6"
                         style={{
                           background: colors.bgSecondary,
