@@ -8,6 +8,7 @@ import Button from './Button';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileOpenSubmenu, setMobileOpenSubmenu] = useState(null);
   const [openMegaMenu, setOpenMegaMenu] = useState(null);
   const location = useLocation();
 
@@ -86,11 +87,13 @@ const Navbar = () => {
                       <div
                         id={`mega-${item.label.replace(/\s+/g, '-')}`}
                         role="menu"
-                        className="absolute top-full left-0 mt-2 w-[600px] rounded-2xl shadow-2xl p-6"
+                        className="absolute top-full left-0 mt-1 w-[600px] rounded-2xl shadow-2xl p-6"
                         style={{
                           background: colors.bgSecondary,
                           border: `1px solid ${colors.borderSubtle}`,
                         }}
+                        onMouseEnter={() => setOpenMegaMenu(item.label)}
+                        onMouseLeave={() => setOpenMegaMenu(null)}
                       >
                         <div className="grid grid-cols-2 gap-6">
                           {item.subItems.map((category) => (
@@ -178,14 +181,63 @@ const Navbar = () => {
           <div className="px-4 py-6 space-y-4">
             {navigationItems.map((item) => (
               <div key={item.label}>
-                <Link
-                  to={item.path}
-                  className="block py-3 text-base font-medium"
-                  style={{ color: colors.textPrimary }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                {item.type === 'mega-menu' ? (
+                  <div>
+                    <button
+                      className="w-full flex items-center justify-between py-3 text-base font-medium"
+                      style={{ color: colors.textPrimary }}
+                      onClick={() =>
+                        setMobileOpenSubmenu(
+                          mobileOpenSubmenu === item.label ? null : item.label
+                        )
+                      }
+                      aria-expanded={mobileOpenSubmenu === item.label}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown size={16} />
+                    </button>
+
+                    {mobileOpenSubmenu === item.label && (
+                      <div className="pl-4 space-y-3">
+                        {item.subItems.map((category) => (
+                          <div key={category.category}>
+                            <div
+                              className="text-sm font-semibold mt-2"
+                              style={{ color: colors.accentPrimary }}
+                            >
+                              {category.category}
+                            </div>
+                            <div className="mt-1 space-y-1">
+                              {category.items.map((subItem) => (
+                                <Link
+                                  key={subItem.path}
+                                  to={subItem.path}
+                                  className="block py-2 text-sm"
+                                  style={{ color: colors.textPrimary }}
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setMobileOpenSubmenu(null);
+                                  }}
+                                >
+                                  {subItem.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className="block py-3 text-base font-medium"
+                    style={{ color: colors.textPrimary }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </div>
             ))}
             <Link to={ctaButton.path} onClick={() => setIsMobileMenuOpen(false)}>
